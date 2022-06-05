@@ -7,6 +7,7 @@
         <div class="col">
             <div>
                 <h1>{{ $post->title }}</h1>
+                <p>By : ruhul <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
                 <!-- Utuk Tidak Mengskip tang html -->
                 {!! $post->body !!}
                 <!-- Utuk Tidak Mengskip tang html -->
