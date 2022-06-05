@@ -35,6 +35,5 @@ Route::get('/about', function () {
 
 Route::get('/post', [PostControler::class, 'index']);
 
-
 //halaman pertama post
 Route::get('post/{slug}', [PostControler::class, 'show']);
