@@ -14,11 +14,11 @@ class PostControler extends Controller
             "posts" => post::all()
         ]);
     }
-    public function show($slug)
+    public function show(post $post)
     {
         return view('posts', [
             "title" => "judul-post-pertama",
-            "post" => post::find($slug)
+            "post" => $post
         ]);
     }
 }
