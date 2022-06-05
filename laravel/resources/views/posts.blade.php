@@ -6,10 +6,15 @@
     <div class="row">
         <div class="col">
             <div>
-                <h1>{{ $post["title"] }}</h1>
-                <h5>{{ $post["author"] }}</h5>
-                <p>{{ $post["body"] }}</p>
+                <h1>{{ $post->title }}</h1>
+                <!-- Utuk Tidak Mengskip tang html -->
+                {!! $post->body !!}
+                <!-- Utuk Tidak Mengskip tang html -->
+                <!-- Awal Belajar -->
+                {{-- <h5>{{ $post->author }}</h5> --}}
+                {{-- <p>{{ $post->body }}</p> --}}
                 {{-- <img src="/img/{{ $image; }}" alt="{{ $name }}" width="200"> --}}
+                <!-- Awal Belajar -->
             </div>
             <button class="mt-4 ">
                 <a href="/post">kembali</a>
