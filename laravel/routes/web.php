@@ -1,8 +1,9 @@
 <?php
 
-use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Route;
 use App\Models\post;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostControler;
+use App\Providers\RouteServiceProvider;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,19 +33,8 @@ Route::get('/about', function () {
 
 
 
-Route::get('/post', function () {
-
-    return view('post', [
-        "title" => "post",
-        "posts" => post::all()
-    ]);
-});
+Route::get('/post', [PostControler::class, 'index']);
 
 
 //halaman pertama post
-Route::get('post/{slug}', function ($slug) {
-    return view('posts', [
-        "title" => "judul-post-pertama",
-        "post" => post::find($slug)
-    ]);
-});
+Route::get('post/{slug}', [PostControler::class, 'show']);
