@@ -12,7 +12,7 @@
                             <a href="/post/{{ $post["slug"] }}">{{ $post["title"] }}</a>
                         </h2>
                         <h5>By : {{ $post["author"] }}</h5>
-                        <img src="/img/{{ $image; }}" alt="{{ $name; }}" width="200" >
+                        
                         <p>{{ $post["body"] }}</p>
                     @endforeach
                 </article>

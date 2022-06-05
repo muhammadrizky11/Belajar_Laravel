@@ -10,11 +10,10 @@
                 <h5>{{ $post["author"] }}</h5>
                 <p>{{ $post["body"] }}</p>
                 <img src="/img/{{ $image; }}" alt="{{ $name }}" width="200">
-               
             </div>
             <button class="mt-4 ">
-             <a href="/post">kembali</a>
-             </button>
+                <a href="/post">kembali</a>
+            </button>
         </div>
     </div>
 </div>

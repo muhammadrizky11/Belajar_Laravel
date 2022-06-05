@@ -8,7 +8,7 @@
                     <h3>{{ $name }}</h3>
                     <p><?= $kelas; ?></p>
                     <p>{{$email}}</p>
-                    <img class="foto" src="/img/<?= $image; ?>" alt="<?= $name; ?>" width="200px">
+                    <img class="img-thumbnail rounded border-primary" src="/img/<?= $image; ?>" alt="<?= $name; ?>" width="200">
                 </div>
             </div>
         </div>

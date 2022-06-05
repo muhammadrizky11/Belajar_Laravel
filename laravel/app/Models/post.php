@@ -1,50 +1,13 @@
 <?php
 
-use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Route;
-use App\Models\post;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+namespace App\Models;
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "home"
-    ]);
-});
+// use Illuminate\Database\Eloquent\Factories\HasFactory;
+// use Illuminate\Database\Eloquent\Model;
 
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "about",
-        "name" => "ruhul aco bagus",
-        "kelas" => "VII",
-        "email" => "ruhul123@gmail.com",
-        "image" => "satu.jpg"
-    ]);
-});
-
-
-
-Route::get('/post', function () {
-
-    return view('post', [
-        "title" => "post",
-        "posts" => post::all()
-    ]);
-});
-
-
-
-//halaman pertama post
-Route::get('post/{slug}', function ($slug) {
-    $blog_posts = [
+class post
+{
+    private static $blog_posts = [
         [
             "title" => "judul pertama",
             "slug" => "judul-post-pertama",
@@ -59,15 +22,8 @@ Route::get('post/{slug}', function ($slug) {
             "body" => "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa beatae magnam iusto numquam sapiente similique, aliquam repudiandae quidem blanditiis, officia ab eligendi rerum odio commodi, perferendis delectus quasi voluptatibus recusandae voluptas iure? Porro, earum voluptates? Quam sunt quod ratione nostrum consequatur ut vitae facilis, quasi expedita iusto eveniet maiores libero repellat modi eligendi repudiandae dolores obcaecati, aliquid, tenetur odio. Ad optio eius perspiciatis iusto excepturi odio impedit voluptates vero minima, eveniet totam sequi animi amet dignissimos autem sapiente itaque quia dolores. Possimus ullam veritatis, accusamus mollitia cumque non aspernatur facilis aut, itaque nisi similique. Ea deserunt corrupti quam dignissimos dolorum, aliquid optio, amet, quidem quaerat aut facere dolorem odio? Sint minima architecto repellat modi, non ipsum. Quaerat maiores officia laudantium eveniet culpa nesciunt? Placeat reiciendis ducimus tenetur repudiandae sed modi veritatis eveniet voluptatibus alias doloremque rem dignissimos illum architecto consequatur magnam nulla, eos similique non delectus nostrum cum iste! Quisquam blanditiis, debitis fugit molestiae nesciunt obcaecati assumenda officia illum amet asperiores fugiat, accusamus eum tempore est minima porro, quam quo quas aliquid voluptas rerum accusantium ex? Illum obcaecati sequi autem quae quos unde velit porro quod, ex fugit saepe. Repudiandae inventore impedit sequi debitis officia voluptate dicta architecto voluptatum aperiam."
         ],
     ];
-
-    $new_post = [];
-    foreach ($blog_posts as $post) {
-        if ($post["slug"] === $slug) {
-            $new_post = $post;
-        }
+    public static function all()
+    {
+        return self::$blog_posts;
     }
-    return view('posts', [
-        "title" => "judul-post-pertama",
-        "post" => $new_post
-    ]);
-});
+}
