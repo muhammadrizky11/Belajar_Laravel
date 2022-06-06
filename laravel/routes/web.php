@@ -39,10 +39,18 @@ Route::get('/post', [PostControler::class, 'index']);
 //halaman pertama post
 Route::get('post/{post:slug}', [PostControler::class, 'show']);
 
+Route::get('/categories', function () {
+    return view('category', [
+        'title' => 'post categories',
+        'categories' => category::all()
+    ]);
+});
+
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('categories', [
         "title" => $category->name,
         "posts" => $category->posts,
+        "name" => $category->slug,
         "categories" => $category->name
     ]);
 });

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col">
                 <article class=" mb-5">
-                    <h1>by Ruhul : {{ $categories }}</h1>
+                    <h1>By  ruhul : {{ $categories }}</h1>
                     @foreach ($posts as $post)
                         <h2>
                             <a href="/post/{{ $post->slug }}">{{ $post->title }}</a>
@@ -21,3 +21,4 @@
 @endsection
 
 
+{{-- {{ $name }} --}}
