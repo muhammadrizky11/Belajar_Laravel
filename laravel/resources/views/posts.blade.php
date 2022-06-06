@@ -7,7 +7,8 @@
         <div class="col">
             <div>
                 <h1>{{ $post->title }}</h1>
-                <p>By : ruhul <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+                <p>By : <a href="#" class="text-decoration-none">{{ $post->user->name }}</a> :  
+                        <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
                 <!-- Utuk Tidak Mengskip tang html -->
                 {!! $post->body !!}
                 <!-- Utuk Tidak Mengskip tang html -->
@@ -18,10 +19,9 @@
                 <!-- Awal Belajar -->
             </div>
             <button class="mt-4 ">
-                <a href="/post">kembali</a>
+                <a href="/post" class="text-decoration-none">kembali</a>
             </button>
         </div>
     </div>
 </div>
 @endsection
-
