@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostControler;
 use App\Providers\RouteServiceProvider;
@@ -47,10 +48,15 @@ Route::get('/categories', function () {
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('categories', [
-        "title" => $category->name,
-        "posts" => $category->posts,
-        "name" => $category->slug,
-        "categories" => $category->name
+    return view('post', [
+        "title" => "Post By Category : $category->name",
+        "posts" => $category->posts->load('category', 'autor'),
+
+    ]);
+});
+Route::get('/autors/{autor:username}', function (User $autor) {
+    return view('post', [
+        "title" => "Post By Author : $autor->name",
+        "posts" => $autor->post->load('category', 'autor'),
     ]);
 });

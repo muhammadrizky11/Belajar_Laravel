@@ -7,7 +7,7 @@
         <div class="col">
             <div>
                 <h1>{{ $post->title }}</h1>
-                <p>By : <a href="#" class="text-decoration-none">{{ $post->user->name }}</a> :  
+                <p>By : <a href="/autors/{{ $post->user->username }}" class="text-decoration-none">{{ $post->user->name }}</a> :  
                         <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
                 <!-- Utuk Tidak Mengskip tang html -->
                 {!! $post->body !!}
