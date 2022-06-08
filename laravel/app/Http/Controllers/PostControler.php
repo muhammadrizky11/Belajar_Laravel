@@ -12,7 +12,8 @@ class PostControler extends Controller
         return view('post', [
             "title" => "All Post",
             // "posts" => post::all()
-            "posts" => post::with(['autor', 'category'])->latest()->get()
+            "posts" => post::latest()->get()
+            // kalu gak di tambahkan protected di post = with(['autor', 'category'])->
         ]);
     }
     public function show(post $post)
