@@ -11,6 +11,7 @@ class PostControler extends Controller
     {
         return view('post', [
             "title" => "All Post",
+            "active" => 'post',
             // "posts" => post::all()
             "posts" => post::latest()->get()
             // kalu gak di tambahkan protected di post = with(['autor', 'category'])->
@@ -20,6 +21,7 @@ class PostControler extends Controller
     {
         return view('posts', [
             "title" => "judul-post-pertama",
+            "active" => 'posts',
             "post" => $post
         ]);
     }

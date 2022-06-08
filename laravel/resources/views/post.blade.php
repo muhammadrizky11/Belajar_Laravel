@@ -30,6 +30,9 @@
         @foreach ($posts->skip(1) as $post)
         <div class="col-md-4 mb-4">
             <div class="card">
+                <div class="position-absolute px-3 py-2 text-white " style="background-color: rgb(0, 0, 0, 0.4)">
+                    <a class="text-decoration-none text-white" href="/categories/{{ $post->category->slug }}">
+               {{ $post->category->name }} </a></div>
                 <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
@@ -46,6 +49,8 @@
 @endforeach
     </div>
 </div>
+
+
 {{-- @foreach ($posts->skip(1) as $post)
     <article class="mb-4 border-bottom pb-4">
         <h2>

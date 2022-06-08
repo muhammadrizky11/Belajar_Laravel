@@ -8,9 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link {{ ($title ==="home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
-                <a class="nav-link {{ ($title ==="about") ? 'active' : '' }}" href="/about">about</a>
-                <a class="nav-link {{ ($title ==="post") ? 'active' : '' }}" href="/post">blog</a>
+                <a class="nav-link {{ ($title ==="about") ? 'active' : '' }}" href="/about">About</a>
+                <a class="nav-link {{ ($title ==="post") ? 'active' : '' }}" href="/post">Blog</a>
+                <a class="nav-link {{ ($title ==="categories") ? 'active' : '' }}" href="/categories">Categories</a>
             </div>
         </div>
     </div>
 </nav>
+
+
+{{-- $title bisa diganti active juga --}}
