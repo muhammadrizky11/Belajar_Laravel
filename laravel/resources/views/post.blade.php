@@ -8,7 +8,7 @@
 
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="" class="card-img-top " alt="...">
+            <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img-top " alt="...">
                 <div class="card-body text-center">
                     <h3 class="card-title"><a href="/post/{{ $posts[0]->slug }}" class="text-decoration-none text-dark" >{{ $posts[0]->title }}</a></h3>
                         <p>
@@ -28,9 +28,9 @@
 <div class="container">
     <div class="row">
         @foreach ($posts->skip(1) as $post)
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4">
             <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
                         <p>
