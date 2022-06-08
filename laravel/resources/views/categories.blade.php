@@ -11,7 +11,7 @@
         <div class="row">
             @foreach ($categories as $category)
             <div class="col">
-                <a href="/categories/{{ $category->slug }}">
+                <a href="/post?categories={{ $category->slug }}">
                     <div class="card bg-dark text-white">
                         <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img" alt="...">
                         <div class="card-img-overlay d-flex align-items-center p-0">

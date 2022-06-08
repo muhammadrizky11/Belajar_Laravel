@@ -7,8 +7,8 @@
         <div class="col-md-8">
             <div>
                 <h1 class="mb-3">{{ $post->title }}</h1>
-                <p>By : <a href="/autors/{{ $post->autor->username }}"class="text-decoration-none">{{ $post->autor->name }}</a>
-                    :<a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
+                <p>By : <a href="/post?autor={{ $post->autor->username }}"class="text-decoration-none">{{ $post->autor->name }}</a>
+                    in:<a href="/post?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
                 
                 <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="img-fluid" alt="">
 

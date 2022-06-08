@@ -20,7 +20,7 @@ use App\Models\Category;
 Route::get('/', function () {
     return view('home', [
         "title" => "home",
-        'active' => 'home',
+        "active" => 'home',
 
 
     ]);
@@ -29,11 +29,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', [
         "title" => "about",
+        'active' => 'about',
         "name" => "ruhul aco bagus",
         "kelas" => "VII",
         "email" => "ruhul123@gmail.com",
         "image" => "satu.jpg",
-        'active' => 'about',
+
     ]);
 });
 
@@ -52,17 +53,21 @@ Route::get('/categories', function () {
     ]);
 });
 
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('post', [
-        'title' => "Post By Category : $category->name",
-        'active' => 'categories',
-        'posts' => $category->posts->load('category', 'autor'),
+//cara awal menampilkan category
+// Route::get('/categories/{category:slug}', function (Category $category) {
+//     return view('post', [
+//         'title' => "Post By Category : $category->name",
+//         'active' => 'categories',
+//         'posts' => $category->posts->load('category', 'autor'),
 
-    ]);
-});
-Route::get('/autors/{autor:username}', function (User $autor) {
-    return view('post', [
-        'title' => "Post By Author : $autor->name",
-        'posts' => $autor->post->load('category', 'autor'),
-    ]);
-});
+//     ]);
+// });
+
+// cara awal mnempilkan autor
+// Route::get('/autors/{autor:username}', function (User $autor) {
+//     return view('post', [
+//         'title' => "Post By Author : $autor->name",
+//         'active' => 'autors',
+//         'posts' => $autor->post->load('category', 'autor'),
+//     ]);
+// });
