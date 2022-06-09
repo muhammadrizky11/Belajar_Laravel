@@ -6,12 +6,18 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link {{ ($active ==="home") ? 'active' : '' }}" aria-current="page" href="/">Home</a>
-                <a class="nav-link {{ ($active ==="about") ? 'active' : '' }}" href="/about">About</a>
-                <a class="nav-link {{ ($active ==="post") ? 'active' : '' }}" href="/post">Blog</a>
-                <a class="nav-link {{ ($active ==="categories") ? 'active' : '' }}" href="/categories">Categories</a>
-            </div>
+            <ul class="navbar-nav">
+                <li class="nav-link {{ ($active ==="home") ? 'active' : '' }}" aria-current="page" href="/">Home</li>
+                <li class="nav-link {{ ($active ==="about") ? 'active' : '' }}" href="/about">About</li>
+                <li class="nav-link {{ ($active ==="post") ? 'active' : '' }}" href="/post">Blog</li>
+                <li class="nav-link {{ ($active ==="categories") ? 'active' : '' }}" href="/categories">Categories</li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/login" class="nav-link {{ ($active ==="login") ? 'active' : '' }}">
+                        <i class="bi bi-box-arrow-in-right"></i>Login</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>

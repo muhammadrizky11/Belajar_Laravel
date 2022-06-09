@@ -38,6 +38,7 @@ class PostControler extends Controller
             // kalu gak di tambahkan protected di post = with(['autor', 'category'])->get()awal nya di rubah paginate untuk menampilan beberapa saja withQuerystring buat bewa semua query sebelumnya di bawa ->
         ]);
     }
+
     public function show(post $post)
     {
         return view('posts', [

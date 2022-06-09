@@ -1,11 +1,13 @@
 <?php
 
-use App\Models\post;
-use App\Models\User;
+// use App\Models\post;
+// use App\Models\User;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostControler;
 use App\Providers\RouteServiceProvider;
-use App\Models\Category;
+use App\Http\Controllers\LoginControler;
+use App\Http\Controllers\RegisterControler;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +54,10 @@ Route::get('/categories', function () {
         'categories' => category::all()
     ]);
 });
+
+
+Route::get('/login', [LoginControler::class, 'index']);
+Route::get('/register', [RegisterControler::class, 'index']);
 
 //cara awal menampilkan category
 // Route::get('/categories/{category:slug}', function (Category $category) {
