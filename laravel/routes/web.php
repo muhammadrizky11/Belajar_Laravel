@@ -57,7 +57,10 @@ Route::get('/categories', function () {
 
 
 Route::get('/login', [LoginControler::class, 'index']);
+
 Route::get('/register', [RegisterControler::class, 'index']);
+Route::post('/register', [RegisterControler::class, 'store']);
+
 
 //cara awal menampilkan category
 // Route::get('/categories/{category:slug}', function (Category $category) {
