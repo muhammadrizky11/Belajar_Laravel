@@ -3,7 +3,7 @@
 // use App\Models\post;
 // use App\Models\User;
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostControler;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostControler;
@@ -11,6 +11,7 @@ use App\Providers\RouteServiceProvider;
 use App\Http\Controllers\LoginControler;
 use App\Http\Controllers\RegisterControler;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\DashboardPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,8 +68,12 @@ Route::post('/logout', [LoginControler::class, 'logout']);
 Route::get('/register', [RegisterControler::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterControler::class, 'store']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth'); 
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+})->middleware('auth');
 
+
+Route::resource('/dashboard/posts', DashboardPostControler::class)->middleware('auth');
 
 
 

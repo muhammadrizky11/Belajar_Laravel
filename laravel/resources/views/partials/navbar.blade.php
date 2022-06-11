@@ -7,10 +7,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
-                <li class="nav-link {{ ($active ==="home") ? 'active' : '' }}" aria-current="page" href="/">Home</li>
-                <li class="nav-link {{ ($active ==="about") ? 'active' : '' }}" href="/about">About</li>
-                <li class="nav-link {{ ($active ==="post") ? 'active' : '' }}" href="/post">Blog</li>
-                <li class="nav-link {{ ($active ==="categories") ? 'active' : '' }}" href="/categories">Categories</li>
+                <a class="nav-link " aria-current="page" href="/">Home</a>
+                <a class="nav-link {{ ($active ==="about") ? 'active' : '' }}" href="/about">About</a>
+                <a class="nav-link {{ ($active ==="post") ? 'active' : '' }}" href="/post">Blog</a>
+                <a class="nav-link {{ ($active ==="categories") ? 'active' : '' }}" href="/categories">Categories</a>
             </ul>
 
             <ul class="navbar-nav ms-auto">
@@ -37,8 +37,6 @@
                 </li>
                 @endauth
             </ul>
-
-        </div>
     </div>
 </nav>
 
