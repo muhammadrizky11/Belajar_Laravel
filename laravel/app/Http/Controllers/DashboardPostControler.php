@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\post;
 use Illuminate\Http\Request;
-use Cviebrock\EloquentSluggable\Services\SlugService;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class DashboardPostControler extends Controller
 {
