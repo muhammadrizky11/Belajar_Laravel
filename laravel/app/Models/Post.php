@@ -2,17 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\post as ModelsPost;
-use App\Models\Post as AppModelsPost;
-use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use PhpParser\Node\Expr\Cast\Array_;
-use Symfony\Component\CssSelector\XPath\Extension\FunctionExtension;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
+
+
     //cara mudah buat baru data post
     // protected $fillable = ['title', 'excerpt', 'body'];
     //cara supata tidak menbahi satu satu
@@ -66,5 +64,14 @@ class Post extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

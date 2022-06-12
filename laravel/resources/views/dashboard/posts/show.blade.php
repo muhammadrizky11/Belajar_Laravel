@@ -17,13 +17,6 @@
                 <!-- Utuk Tidak Mengskip tang html -->
                 {!! $posts->body !!}
                 </article>
-                
-                <!-- Utuk Tidak Mengskip tang html -->
-                <!-- Awal Belajar -->
-                {{-- <h5>{{ $post->author }}</h5> --}}
-                {{-- <p>{{ $post->body }}</p> --}}
-                {{-- <img src="/img/{{ $image; }}" alt="{{ $name }}" width="200"> --}}
-                <!-- Awal Belajar -->
             </div>
             <button class="">
                 <a href="/posts" class="text-decoration-none text-dark ">kembali</a>
