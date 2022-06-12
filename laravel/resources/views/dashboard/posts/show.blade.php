@@ -18,9 +18,6 @@
                 {!! $posts->body !!}
                 </article>
             </div>
-            <button class="">
-                <a href="/posts" class="text-decoration-none text-dark ">kembali</a>
-            </button>
         </div>
     </div>
 </div>
