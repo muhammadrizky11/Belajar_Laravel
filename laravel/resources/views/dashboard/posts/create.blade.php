@@ -10,7 +10,7 @@
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="email" class="form-control" id="title" name="title">
+            <input type="text" class="form-control" id="title" name="title">
         </div>
         <div class="mb-3">
             <label for="slug" class="form-label">Slug</label>
@@ -21,13 +21,14 @@
     </form>
 
     <script>
-        const title = document.querySelector('#title');
-        const slug = document.querySelector('#slug');
+        conts title = document.querySelector('#title');
+        conts slug  = document.querySelector('#slug');
 
         title.addEventListener('change', function() {
-            fetch('/dashboard/posts/checkSlug?title='+ title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
+            fetch('/dashboard/posts/checkSlug?title=' + title.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+
         });
     </script>
 </div>
