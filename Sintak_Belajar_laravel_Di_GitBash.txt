@@ -1,0 +1,33 @@
+untuk menambah data di dalam database =  php artisan tinker
+untuk mengisi data yang boleh di database = $user = new User;
+untuk menambah name di database = $user->name ='ruhul'
+nntuk menambah password = $user->password = (untuk type password)-> bcrypt (passowrdnya)->('123')
+untuk save database yang di masukkan =  $user->save()
+untuk melihat data yang sudah di masukkan =  $user->all() /user::all 
+untuk mencari data pertama di database = $user->first() /post::pluck('title) 
+untuk mencari data nama = $post->category->name
+untuk mencari data susuai id = $user->find(2) /post::find(2)
+untuk mencari data jika ada tampilan jika tidak ada jangan tampilkan tampilkan erorr nya = $user->findOrFail(2000)
+untuk menambah model tapi kalu bingung bisa menabah kan help di depan = php artisan help make:model
+
+CARA MUDAH MENAMBAH DATA
+Post::create([
+    'title' => 'judul kepertama',
+    'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, consequuntur?hkjahsjhkdjhkasjhdkjhasjkdhk',
+    'body' => '<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio provident ducimus velit at qui ab inventore aperiam obcaecati adipisci nobis?</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, consequuntur?</p><p>Lorem ipsum dolor sit amet.</p>'
+])
+
+
+cara untuk update  data = Post::find(3)->update(['title' => 'judul ketiga ruhul'])
+untuk update  excerpt lewat title = post::where('title', 'judul kedua')->update(['excerpt' => 'excerpt post 2 berubah'])
+
+Category::create([
+    'name' => 'Public',
+    'slug' => 'public'
+])
+
+CARA SEED
+untuk menambah seed = php artisan db:seed
+untuk migrate:fresh dan menambah seed = php artisan migrate:fresh --seed
+
+CARA UNTUK MEBUAT MODEL CONTOH(GURU) DAN SEKALIAN MIGRATE,FACTORY,SEEDER AKAN OTOMATIS DIBUAT KAN  MIGRATE,FACTORY,SEEDER = php artisan make:model guru -mfs
