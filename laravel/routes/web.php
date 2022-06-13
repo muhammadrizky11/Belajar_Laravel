@@ -3,6 +3,7 @@
 // use App\Models\post;
 // use App\Models\User;
 
+use App\Http\Controllers\AdminCategoryControler;
 use App\Http\Controllers\DashboardPostControler;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -75,6 +76,9 @@ Route::get('/dashboard', function () {
 Route::get('/dashboard/posts/cekSlug', [DashboardPostControler::class, 'cekSlug']);
 // Route::get('/dashboard/posts/tesSlug', [DashboardPostControler::class, 'tesSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostControler::class)->middleware('auth');
+
+Route::resource('/dashboard/categories', AdminCategoryControler::class)->except('show')->middleware('auth')->middleware('admin');
+
 
 
 
