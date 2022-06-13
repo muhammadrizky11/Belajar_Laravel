@@ -16,9 +16,9 @@
                             <span data-feather="trash-2"></button>
                     </form>
                     @if ($posts->image)
-                    //dimasukkan di div untuk ngepaskan ukuran nya
+                    {{-- //dimasukkan di div untuk ngepaskan ukuran nya --}}
                         <div style="max-height: 350px; overflow:hidden;">
-                            <img src="{{ asset('storage/'. $posts->image) }}" class="img-fluid mt-3" alt="{{ $post->category->name }}">
+                            <img src="{{ asset('storage/'. $posts->image) }}" class="img-fluid mt-3" alt="{{ $posts->category->name }}">
                         </div>
                         @else
                         <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="img-fluid mt-3" alt="">
