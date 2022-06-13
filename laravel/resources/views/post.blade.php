@@ -28,7 +28,15 @@
 
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img-top " alt="...">
+            @if ($posts[0]->image)
+                    {{-- dimasukkan di div untuk ngepaskan ukuran nya --}}
+                    <div style="max-height: 500px; overflow:hidden;">
+                        <img src="{{ asset('storage/'. $posts[0]->image) }}" class="img-fluid" alt="{{ $posts[0]->category->name }}">
+                    </div>
+                @else
+                    <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img-top " alt="{{ $posts[0]->category->name }}">
+            @endif
+            
                 <div class="card-body text-center">
                     <h3 class="card-title"><a href="/post/{{ $posts[0]->slug }}" class="text-decoration-none text-dark" >{{ $posts[0]->title }}</a></h3>
                         <p>
@@ -56,7 +64,11 @@
                 <div class="position-absolute px-3 py-2 text-white " style="background-color: rgb(0, 0, 0, 0.4)">
                     <a class="text-decoration-none text-white" href="/post?category={{ $post->category->slug }}">
                 {{ $post->category->name }} </a></div>
-                <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img-top" alt="...">
+                @if ($post->image)
+                    <img src="{{ asset('storage/'. $post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
+                    @else
+                        <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="card-img-top" alt="{{ $post->category->name }}">
+                @endif
                 <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
                         <p>

@@ -31,3 +31,4 @@ untuk menambah seed = php artisan db:seed
 untuk migrate:fresh dan menambah seed = php artisan migrate:fresh --seed
 
 CARA UNTUK MEBUAT MODEL CONTOH(GURU) DAN SEKALIAN MIGRATE,FACTORY,SEEDER AKAN OTOMATIS DIBUAT KAN  MIGRATE,FACTORY,SEEDER = php artisan make:model guru -mfs
+cara melihat data default route di terminal php artisan route:list

@@ -10,8 +10,14 @@
                 <p>By : <a href="/post?autor={{ $post->autor->username }}"class="text-decoration-none">{{ $post->autor->name }}</a>
                     in:<a href="/post?category={{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
                 
-                <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="img-fluid" alt="">
-
+                    @if ($post->image)
+                {{-- //dimasukkan di div untuk ngepaskan ukuran nya --}}
+                        <div style="max-height: 350px; overflow:hidden;">
+                            <img src="{{ asset('storage/'. $post->image) }}" class="img-fluid" alt="{{ $post->category->name }}">
+                        </div>
+                        @else
+                        <img src="https://www.brainacademy.id/hubfs/Pojok%20Kampus%20-%20Jurusan%20Teknik%20Komputer-01.jpeg" class="img-fluid" alt="">
+                    @endif
                 <article class="my-3 fs-5">
                 <!-- Utuk Tidak Mengskip tang html -->
                 {!! $post->body !!}
